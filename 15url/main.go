@@ -17,7 +17,7 @@ func main() {
 	fmt.Println(result.Port())
 	fmt.Println(result.RawQuery)
 	qparams := result.Query()
-	fmt.Println("The type of query params are%T\n", qparams)
+	fmt.Printf("The type of query params are %T\n", qparams)
 	fmt.Print(qparams["coursename"], "\n")
 	for _, val := range qparams {
 		fmt.Println(val)
