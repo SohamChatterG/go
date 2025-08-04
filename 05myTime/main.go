@@ -6,16 +6,21 @@ import (
 )
 
 func main() {
-	fmt.Println("welcome to my time tracker app")
+	fmt.Println("welcome to go time tracker app")
 
 	presentTime := time.Now()
 	fmt.Println("Current time is:", presentTime)
-
-	fmt.Println(presentTime.Format("01-02-2006 Monday 15:04:05 "))
+	// the way we give the string in the format the result will be such :- "01/02/06 Monday 15:04:05", etc.
+	fmt.Println(presentTime.Format("01-02-2006 Monday 15:04:05"))
 
 	createdDate := time.Date(2002, time.December, 23, 0, 0, 0, 0, time.UTC)
-	fmt.Println("Manually created date:", createdDate.Format("02 Jan 2006"))
+	fmt.Println("Manually created date:", createdDate.Format("02 Janu 2006"))
 
+	// converting a string into date
+	layoutStr := "06-01-02"
+	dateStr := "25-05-02"
+	formatted, _ := time.Parse(layoutStr, dateStr)
+	fmt.Println("converted from string to date : ", formatted)
 	// User input
 	var day, year int
 	var monthStr string
